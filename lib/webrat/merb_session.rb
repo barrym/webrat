@@ -38,10 +38,12 @@ module Webrat
     end
 
     def do_request(url, data, headers, method)
-      @response = request(url,
+      env = {
         :params => (data && data.any?) ? data : nil,
-        :headers => headers,
-        :method => method)
+        :method => method
+      }.merge(headers || {})
+
+      @response = request(url, env)
     end
 
   end

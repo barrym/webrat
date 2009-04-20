@@ -30,4 +30,5 @@ Merb::Router.prepare do
   match("/").to(:controller => "testing", :action => "show_form")
   match("/internal_redirect").to(:controller => "testing", :action => "internal_redirect")
   match("/external_redirect").to(:controller => "testing", :action => "external_redirect")
+  match("/custom_headers").to(:controller => "testing", :action => "custom_headers")
 end

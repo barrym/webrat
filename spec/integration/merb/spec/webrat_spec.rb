@@ -29,4 +29,10 @@ describe "Webrat" do
     response = visit "/external_redirect"
     response.status.should == 302
   end
+
+  it "should allow custom headers" do
+    header("my_custom_header", "this_is_my_custom_header")
+    response = visit "/custom_headers"
+    response.should contain("this_is_my_custom_header")
+  end
 end

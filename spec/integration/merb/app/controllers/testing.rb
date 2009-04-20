@@ -15,4 +15,8 @@ class Testing < Application
     redirect "http://google.com"
   end
 
+  def custom_headers
+    return request.env['my_custom_header']
+  end
+
 end
